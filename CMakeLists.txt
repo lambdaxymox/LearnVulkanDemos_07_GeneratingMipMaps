@@ -82,8 +82,6 @@ add_subdirectory(external/fmt-10.2.0)
 add_subdirectory(external/stb)
 add_subdirectory(external/tiny_obj_loader)
 
-# add_subdirectory(internal/vulkan_engine)
-
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin")
 
 add_executable(LearnVulkanDemos_07_GeneratingMipMaps)
@@ -92,7 +90,6 @@ target_sources(LearnVulkanDemos_07_GeneratingMipMaps PRIVATE
     src/engine.cpp
 )
 target_link_libraries(LearnVulkanDemos_07_GeneratingMipMaps PRIVATE Vulkan::Vulkan)
-# target_link_libraries(LearnVulkanDemos_07_GeneratingMipMaps PRIVATE vulkan_engine)
 target_link_libraries(LearnVulkanDemos_07_GeneratingMipMaps PRIVATE glfw)
 target_link_libraries(LearnVulkanDemos_07_GeneratingMipMaps PRIVATE glm)
 target_link_libraries(LearnVulkanDemos_07_GeneratingMipMaps PRIVATE fmt)
