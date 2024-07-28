@@ -33,7 +33,6 @@
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtx/hash.hpp>
 
-
 #include <stb/stb_image.h>
 #include <tiny_obj_loader/tiny_obj_loader.h>
 
@@ -46,10 +45,6 @@ const std::string TEXTURE_PATH = std::string { "assets/viking_room/viking_room.p
 
 const std::vector<std::string> VALIDATION_LAYERS = std::vector<std::string> { 
     VulkanEngine::Constants::VK_LAYER_KHRONOS_validation
-};
-
-const std::vector<const char*> deviceExtensions = std::vector<const char*> {
-    VK_KHR_SWAPCHAIN_EXTENSION_NAME
 };
 
 #ifdef NDEBUG
@@ -2846,12 +2841,15 @@ class App {
             // makes the viewport and scissor rectangle for this pipeline immutable.
             // Any changes to these values would require a new pipeline to be created with
             // the new values.
-            // VkPipelineViewportStateCreateInfo viewportState{};
-            // viewportState.sType = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;
-            // viewportState.viewportCount = 1;
-            // viewportState.pViewports = &viewport;
-            // viewportState.scissorCount = 1;
-            // viewportState.pScissors = &scissor;
+            // ```
+            // const auto viewportState = VkPipelineViewportStateCreateInfo {
+            //     .sType = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO,
+            //     .viewportCount = 1,
+            //     .pViewports = &viewport,
+            //     .scissorCount = 1,
+            //     .pScissors = &scissor,
+            // };
+            // ```
             const auto viewportState = VkPipelineViewportStateCreateInfo {
                 .sType = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO,
                 .viewportCount = 1,
