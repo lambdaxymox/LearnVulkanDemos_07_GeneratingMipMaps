@@ -2331,7 +2331,7 @@ class App {
         }
 
         void createTextureImageView() {
-            auto textureImageView = createImageView(m_textureImage, VK_FORMAT_R8G8B8A8_SRGB, VK_IMAGE_ASPECT_COLOR_BIT, m_mipLevels);
+            auto textureImageView = this->createImageView(m_textureImage, VK_FORMAT_R8G8B8A8_SRGB, VK_IMAGE_ASPECT_COLOR_BIT, m_mipLevels);
 
             m_textureImageView = textureImageView;
         }
@@ -2379,8 +2379,7 @@ class App {
         }
 
         void createVertexBuffer() {
-            const VkDeviceSize bufferSize = sizeof(m_mesh.vertices()[0]) * m_mesh.vertices().size();
-
+            const auto bufferSize = VkDeviceSize { sizeof(m_mesh.vertices()[0]) * m_mesh.vertices().size() };
             VkBufferUsageFlags stagingBufferUsageFlags = VK_BUFFER_USAGE_TRANSFER_SRC_BIT;
             VkMemoryPropertyFlags stagingBufferPropertyFlags = VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | 
                 VK_MEMORY_PROPERTY_HOST_COHERENT_BIT;
