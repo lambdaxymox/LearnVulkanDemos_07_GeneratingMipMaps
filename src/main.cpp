@@ -2985,7 +2985,7 @@ class App {
         void createFramebuffers() {
             auto swapChainFramebuffers = std::vector<VkFramebuffer> { m_swapChainImageViews.size(), VK_NULL_HANDLE };
             for (size_t i = 0; i < m_swapChainImageViews.size(); i++) {
-                auto attachments = std::array<VkImageView, 2> {
+                const auto attachments = std::array<VkImageView, 2> {
                     m_swapChainImageViews[i],
                     m_depthImageView,
                 };
