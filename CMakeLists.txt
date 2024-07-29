@@ -88,6 +88,7 @@ add_executable(LearnVulkanDemos_07_GeneratingMipMaps)
 target_sources(LearnVulkanDemos_07_GeneratingMipMaps PRIVATE
     src/main.cpp
     src/engine.cpp
+    src/engine_impl_fmt.cpp
 )
 target_link_libraries(LearnVulkanDemos_07_GeneratingMipMaps PRIVATE Vulkan::Vulkan)
 target_link_libraries(LearnVulkanDemos_07_GeneratingMipMaps PRIVATE glfw)
